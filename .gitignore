@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+.npm/
+
+# Agent & IDE
+.kilocode/
+.specify/
+.vscode/
+.idea/
+
+# System Files
+Thumbs.db
+.DS_Store
+
+# Temporary Scripts & Logs
+*.log
+*.tmp
+temp/
+
+# Raw Assets (Optimized versions are in /assets)
+videos/
+imagens/

@@ -1,0 +1,692 @@
+/* 
+  Theme: Forest / Nature 
+  Primary: Deep Forest Green
+  Secondary: Moss Green
+  Accent: Earthy Brown
+  Background: Off-white
+  Text: Dark Charcoal
+*/
+
+:root {
+    --primary-color: #09212C;
+    /* Deep Navy */
+    --primary-dark: #05161D;
+    --secondary-color: #ABC022;
+    /* Lime Green - Accent */
+    --accent-color: #9CA3AF;
+    /* Grey */
+    --bg-color: #FFFFFF;
+    --bg-card: #F8F9FA;
+    --text-main: #333333;
+    --text-muted: #666666;
+    --text-light: #FFFFFF;
+
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 4rem;
+
+    --border-radius: 4px;
+    /* Sharper corners for engineering look */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    --container-width: 1200px;
+    --header-height: 80px;
+}
+
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', 'Roboto', 'Segoe UI', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Layout */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+section {
+    padding: var(--spacing-xl) 0;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-color);
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    margin-bottom: var(--spacing-md);
+}
+
+/* Header */
+header {
+    height: var(--header-height);
+    background-color: var(--bg-color);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo-img {
+    height: 70px;
+    /* Increased for better prominence */
+    width: auto;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.nav-links a {
+    font-weight: 600;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+}
+
+/* Hero Section */
+.hero {
+    height: calc(100vh - var(--header-height));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-videos {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+}
+
+.hero-video.active {
+    opacity: 0.25;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg,
+            rgba(9, 33, 44, 0.85) 0%,
+            rgba(9, 33, 44, 0.75) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h1 {
+    color: var(--text-light);
+    margin-bottom: var(--spacing-sm);
+    font-size: 4rem;
+    /* More impact */
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: var(--spacing-lg);
+    opacity: 0.9;
+    color: var(--secondary-color);
+    /* Lime accent */
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    /* Dark text on lime */
+    border-radius: 30px;
+    /* Pill shape */
+    font-weight: 700;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn:hover {
+    background-color: #FFFFFF;
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--text-light);
+    color: var(--text-light);
+    margin-left: var(--spacing-md);
+    border-radius: 30px;
+}
+
+.btn-outline:hover {
+    background-color: var(--text-light);
+    color: var(--primary-color);
+}
+
+/* About Section */
+.about {
+    background-color: var(--bg-color);
+}
+
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: stretch;
+    /* Stretch image to match text height */
+}
+
+.about-img {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    /* Ensure a minimum good height */
+    object-fit: cover;
+    object-position: top center;
+    /* Focus on face */
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+}
+
+.about-text ul {
+    margin-top: var(--spacing-md);
+}
+
+.about-text li {
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+}
+
+.about-text li::before {
+    content: "•";
+    color: var(--secondary-color);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .nav-links {
+        display: none;
+        /* TODO: Add Mobile Menu later */
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .about-img {
+        height: 300px;
+    }
+}
+
+/* Projects Section */
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.project-card {
+    background-color: var(--bg-card);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 320px;
+    max-width: 400px;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.project-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background-color: #ddd;
+}
+
+.project-info {
+    padding: var(--spacing-md);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.project-info p {
+    flex-grow: 1;
+}
+
+.project-card .btn-outline {
+    margin-left: 0;
+    margin-top: var(--spacing-sm);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    align-self: flex-start;
+}
+
+.project-card .btn-outline:hover {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+/* Contact Section */
+.contact {
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+    text-align: center;
+}
+
+.contact h2 {
+    color: var(--text-light);
+}
+
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: var(--text-light);
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
+
+.contact-link:hover {
+    opacity: 0.8;
+}
+
+/* Geoprocessing Section */
+.geo {
+    background-color: #f0f4f8;
+    /* Light grey-blue */
+    border-top: 1px solid #e1e4e8;
+    border-bottom: 1px solid #e1e4e8;
+}
+
+.section-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-xl);
+    font-size: 1.1rem;
+    color: var(--text-muted);
+}
+
+.geo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-lg);
+}
+
+.geo-card {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 1px solid transparent;
+    flex: 1 1 300px;
+    max-width: 400px;
+}
+
+.geo-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--secondary-color);
+}
+
+.geo-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+    background: #eef2f5;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.geo-icon-img {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--spacing-md);
+    display: block;
+}
+
+.geo-img-preview {
+    margin-top: var(--spacing-md);
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    /* Show strict map borders */
+    border: 1px solid #ddd;
+    background: #fff;
+    padding: 4px;
+}
+
+.geo-cta {
+    text-align: center;
+    margin-top: var(--spacing-xl);
+}
+
+/* Treinamentos Section */
+.treinamentos {
+    background-color: #f7f9fc;
+    /* Light blue tint for education */
+    border-top: 1px solid #e1e5eb;
+    border-bottom: 1px solid #e1e5eb;
+}
+
+.treinamentos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-lg);
+}
+
+.treinamento-card {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid transparent;
+    border-left: 4px solid transparent;
+    width: 100%;
+    max-width: 400px;
+}
+
+.treinamento-card:hover {
+    transform: translateY(-5px);
+    border-left-color: var(--primary-color);
+    box-shadow: var(--shadow-md);
+}
+
+.treinamento-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+    background: linear-gradient(135deg, #e8f0f8, #dce8f5);
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.treinamentos-cta {
+    text-align: center;
+    margin-top: var(--spacing-xl);
+}
+
+/* Service Illustrations (generic for all sections) */
+.service-illustration {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    margin: 0 auto var(--spacing-md);
+    display: block;
+}
+
+/* Contact Section */
+.contact {
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+    text-align: center;
+}
+
+.contact h2 {
+    color: var(--text-light);
+}
+
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: var(--text-light);
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
+
+.contact-link:hover {
+    opacity: 0.8;
+}
+
+/* Paisagismo Section */
+.paisagismo {
+    background-color: #f9fdf7;
+    /* Very light green tint */
+    border-top: 1px solid #e1e8e1;
+    border-bottom: 1px solid #e1e8e1;
+}
+
+.paisagismo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-lg);
+}
+
+.paisagismo-card {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid transparent;
+    width: 100%;
+    max-width: 400px;
+}
+
+.paisagismo-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--secondary-color);
+    box-shadow: var(--shadow-md);
+}
+
+.paisagismo-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+    background: linear-gradient(135deg, #f0f8f0, #e8f5e8);
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.paisagismo-cta {
+    text-align: center;
+    margin-top: var(--spacing-xl);
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    color: #888;
+    text-align: center;
+    padding: var(--spacing-xl) 0;
+    font-size: 0.9rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.footer-logo {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.footer-logo:hover {
+    opacity: 1;
+}
+
+/* Accessibility: Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .hero-video {
+        display: none;
+    }
+}
