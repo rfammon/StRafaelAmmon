@@ -33,5 +33,57 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(rotateVideos, transitionInterval);
     }
 
+    // ============================================
+    // FLIP CARD INTERACTION
+    // ============================================
+    const flipCards = document.querySelectorAll('.flip-card');
+
+    flipCards.forEach(card => {
+        // Click on card to flip
+        card.addEventListener('click', (e) => {
+            // Don't flip if clicking the back button
+            if (e.target.closest('.flip-back-btn')) {
+                return;
+            }
+
+            // Close any other open cards first
+            flipCards.forEach(otherCard => {
+                if (otherCard !== card && otherCard.classList.contains('flipped')) {
+                    otherCard.classList.remove('flipped');
+                }
+            });
+
+            // Toggle this card
+            card.classList.add('flipped');
+        });
+
+        // Back button to close
+        const backBtn = card.querySelector('.flip-back-btn');
+        if (backBtn) {
+            backBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                card.classList.remove('flipped');
+            });
+        }
+    });
+
+    // Close flipped card when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.flip-card')) {
+            flipCards.forEach(card => {
+                card.classList.remove('flipped');
+            });
+        }
+    });
+
+    // Close flipped card with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            flipCards.forEach(card => {
+                card.classList.remove('flipped');
+            });
+        }
+    });
+
     // Future: Mobile Menu Toggle Logic
 });

@@ -108,76 +108,240 @@
     <section id="projects">
         <div class="container">
             <h2>Experiência & Projetos</h2>
+            <p class="section-intro">Clique em um card para ver mais detalhes sobre cada experiência profissional.</p>
             <div class="projects-grid">
-                <!-- Project 1: Current Consulting -->
-                <article class="project-card">
-                    <img src="assets/project_consulting.png" alt="Consultoria Florestal" class="project-img">
-                    <div class="project-info">
-                        <h3>Consultoria Técnica em Engenharia Florestal</h3>
-                        <p><strong>Atual</strong><br>Desenvolvimento de padrões técnicos, protocolos operacionais e
-                            boas práticas para empresas do setor florestal e ambiental. Aliança entre literatura
-                            científica
-                            e experiência de campo para entregar resultados mensuráveis.</p>
+
+                <!-- Experience 1: Consultoria Técnica -->
+                <article class="flip-card" data-experience="consultoria">
+                    <div class="flip-card-inner">
+                        <!-- FRENTE DO CARD -->
+                        <div class="flip-card-front">
+                            <img src="assets/project_consulting.png" alt="Consultoria Florestal" class="project-img">
+                            <div class="project-info">
+                                <h3>Consultoria Técnica em Engenharia Florestal</h3>
+                                <p><strong>Atual</strong><br>Desenvolvimento de padrões técnicos e boas práticas para
+                                    empresas do setor florestal.</p>
+                            </div>
+                            <span class="flip-hint">🔄 Clique para ver detalhes</span>
+                        </div>
+                        <!-- VERSO DO CARD -->
+                        <div class="flip-card-back">
+                            <button class="flip-back-btn" aria-label="Voltar">✕</button>
+                            <h3>Consultoria Técnica</h3>
+                            <p class="experience-period">📅 Atual</p>
+                            <div class="experience-details">
+                                <!-- PLACEHOLDER: Substitua este texto pela descrição detalhada -->
+                                <p class="experience-description">
+                                    Atuação como consultor técnico especializado, desenvolvendo padrões operacionais e
+                                    protocolos de boas práticas para empresas do setor florestal e ambiental. O
+                                    diferencial está em aliar literatura científica de ponta com experiência prática de
+                                    campo.
+                                </p>
+                                <h4>🎯 Principais Entregas</h4>
+                                <ul class="experience-achievements">
+                                    <!-- PLACEHOLDER: Substitua pelos itens reais -->
+                                    <li>Desenvolvimento de manuais técnicos operacionais</li>
+                                    <li>Consultoria em conformidade ambiental</li>
+                                    <li>Treinamento de equipes de campo</li>
+                                </ul>
+                                <!-- PLACEHOLDER: Adicione imagens do projeto aqui -->
+                                <div class="experience-gallery">
+                                    <!-- <img src="assets/detail_consultoria_1.png" alt="Detalhe 1"> -->
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </article>
 
-                <!-- Project 2: REPLAN Photovoltaic -->
-                <article class="project-card">
-                    <img src="assets/project_replan_solar.png" alt="Projeto REPLAN" class="project-img">
-                    <div class="project-info">
-                        <h3>Parque Fotovoltaico REPLAN</h3>
-                        <p><strong>Refinaria do Planalto (2º semestre de 2025)</strong><br>Coordenação de projeto de
-                            supressão
-                            vegetal de espécies invasoras exóticas para implantação de parque fotovoltaico. Gestão de
-                            equipes,
-                            planejamento operacional e controle de qualidade.</p>
+                <!-- Experience 2: REPLAN Solar -->
+                <article class="flip-card" data-experience="replan">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="assets/project_replan_solar.png" alt="Projeto REPLAN" class="project-img">
+                            <div class="project-info">
+                                <h3>Parque Fotovoltaico REPLAN</h3>
+                                <p><strong>Refinaria do Planalto (2º sem. 2025)</strong><br>Coordenação de supressão
+                                    vegetal para parque fotovoltaico.</p>
+                            </div>
+                            <span class="flip-hint">🔄 Clique para ver detalhes</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <button class="flip-back-btn" aria-label="Voltar">✕</button>
+                            <h3>Parque Fotovoltaico REPLAN</h3>
+                            <p class="experience-period">📅 2º Semestre de 2025</p>
+                            <div class="experience-details">
+                                <!-- PLACEHOLDER: Substitua este texto pela descrição detalhada -->
+                                <p class="experience-description">
+                                    Coordenação de projeto de supressão vegetal de espécies invasoras exóticas para
+                                    implantação de parque fotovoltaico na Refinaria do Planalto. Gestão de equipes
+                                    multidisciplinares, planejamento operacional e controle de qualidade.
+                                </p>
+                                <h4>🎯 Principais Entregas</h4>
+                                <ul class="experience-achievements">
+                                    <!-- PLACEHOLDER: Substitua pelos itens reais -->
+                                    <li>Planejamento de supressão vegetal</li>
+                                    <li>Gestão de equipes de campo</li>
+                                    <li>Controle de qualidade ambiental</li>
+                                </ul>
+                                <div class="experience-gallery">
+                                    <!-- PLACEHOLDER: Adicione imagens do projeto aqui -->
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </article>
 
-                <!-- Project 3: Vinil / RPBC -->
-                <article class="project-card">
-                    <img src="assets/project_rpbc.png" alt="Refinaria Presidente Bernardes" class="project-img">
-                    <div class="project-info">
-                        <h3>Gestão Ambiental Industrial</h3>
-                        <p><strong>Refinaria Presidente Bernardes (2023-2025)</strong><br>Fiscal de Meio Ambiente na
-                            Refinaria Presidente Bernardes. Fiscalização de contratos de áreas verdes, análise de risco,
-                            gestão de equipes e implementação de melhorias em conformidade ambiental.</p>
+                <!-- Experience 3: RPBC -->
+                <article class="flip-card" data-experience="rpbc">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="assets/project_rpbc.png" alt="Refinaria Presidente Bernardes" class="project-img">
+                            <div class="project-info">
+                                <h3>Gestão Ambiental Industrial</h3>
+                                <p><strong>RPBC (2023-2025)</strong><br>Fiscal de Meio Ambiente com foco em áreas verdes
+                                    e conformidade.</p>
+                            </div>
+                            <span class="flip-hint">🔄 Clique para ver detalhes</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <button class="flip-back-btn" aria-label="Voltar">✕</button>
+                            <h3>Gestão Ambiental Industrial</h3>
+                            <p class="experience-period">📅 2023 - 2025</p>
+                            <div class="experience-details">
+                                <!-- PLACEHOLDER: Substitua este texto pela descrição detalhada -->
+                                <p class="experience-description">
+                                    Fiscal de Meio Ambiente na Refinaria Presidente Bernardes (RPBC). Responsável pela
+                                    fiscalização de contratos de áreas verdes, análise de risco arbóreo, gestão de
+                                    equipes terceirizadas e implementação de melhorias em conformidade ambiental.
+                                </p>
+                                <h4>🎯 Principais Entregas</h4>
+                                <ul class="experience-achievements">
+                                    <!-- PLACEHOLDER: Substitua pelos itens reais -->
+                                    <li>Fiscalização de contratos de manutenção</li>
+                                    <li>Análise de risco arbóreo</li>
+                                    <li>Melhorias em conformidade ambiental</li>
+                                </ul>
+                                <div class="experience-gallery">
+                                    <!-- PLACEHOLDER: Adicione imagens do projeto aqui -->
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </article>
 
-                <!-- Project 4: REVAP -->
-                <article class="project-card">
-                    <img src="assets/project_revap.png" alt="Refinaria do Vale do Paraíba" class="project-img">
-                    <div class="project-info">
-                        <h3>Manutenção de Áreas Verdes - REVAP</h3>
-                        <p><strong>Refinaria do Vale do Paraíba (2022-2023)</strong><br>Supervisão e planejamento de
-                            contratos de
-                            manutenção de áreas verdes, assegurando qualidade técnica e cumprimento de cronogramas.</p>
+                <!-- Experience 4: REVAP -->
+                <article class="flip-card" data-experience="revap">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="assets/project_revap.png" alt="Refinaria do Vale do Paraíba" class="project-img">
+                            <div class="project-info">
+                                <h3>Manutenção de Áreas Verdes - REVAP</h3>
+                                <p><strong>REVAP (2022-2023)</strong><br>Supervisão de contratos de manutenção de áreas
+                                    verdes.</p>
+                            </div>
+                            <span class="flip-hint">🔄 Clique para ver detalhes</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <button class="flip-back-btn" aria-label="Voltar">✕</button>
+                            <h3>Manutenção de Áreas Verdes - REVAP</h3>
+                            <p class="experience-period">📅 2022 - 2023</p>
+                            <div class="experience-details">
+                                <!-- PLACEHOLDER: Substitua este texto pela descrição detalhada -->
+                                <p class="experience-description">
+                                    Supervisão e planejamento de contratos de manutenção de áreas verdes na Refinaria do
+                                    Vale do Paraíba, assegurando qualidade técnica e cumprimento de cronogramas.
+                                </p>
+                                <h4>🎯 Principais Entregas</h4>
+                                <ul class="experience-achievements">
+                                    <!-- PLACEHOLDER: Substitua pelos itens reais -->
+                                    <li>Supervisão de contratos de manutenção</li>
+                                    <li>Controle de cronogramas</li>
+                                    <li>Garantia de qualidade técnica</li>
+                                </ul>
+                                <div class="experience-gallery">
+                                    <!-- PLACEHOLDER: Adicione imagens do projeto aqui -->
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </article>
 
-                <!-- Project 4: Elementus / GasLub -->
-                <article class="project-card">
-                    <img src="assets/project_gaslub.png" alt="Projeto GasLub" class="project-img">
-                    <div class="project-info">
-                        <h3>Restauração Florestal GasLub</h3>
-                        <p><strong>Elementus (2021-2022)</strong><br>Coordenação de projeto com 350 hectares de mata
-                            nativa. Liderança de equipes, planejamento de atividades e avaliação de qualidade técnica
-                            dos plantios.</p>
+                <!-- Experience 5: GasLub -->
+                <article class="flip-card" data-experience="gaslub">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="assets/project_gaslub.png" alt="Projeto GasLub" class="project-img">
+                            <div class="project-info">
+                                <h3>Restauração Florestal GasLub</h3>
+                                <p><strong>Elementus (2021-2022)</strong><br>Coordenação de 350 hectares de restauração
+                                    de mata nativa.</p>
+                            </div>
+                            <span class="flip-hint">🔄 Clique para ver detalhes</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <button class="flip-back-btn" aria-label="Voltar">✕</button>
+                            <h3>Restauração Florestal GasLub</h3>
+                            <p class="experience-period">📅 2021 - 2022</p>
+                            <div class="experience-details">
+                                <!-- PLACEHOLDER: Substitua este texto pela descrição detalhada -->
+                                <p class="experience-description">
+                                    Coordenação de projeto de restauração florestal com 350 hectares de mata nativa.
+                                    Liderança de equipes de campo, planejamento de atividades e avaliação de qualidade
+                                    técnica dos plantios.
+                                </p>
+                                <h4>🎯 Principais Entregas</h4>
+                                <ul class="experience-achievements">
+                                    <!-- PLACEHOLDER: Substitua pelos itens reais -->
+                                    <li>Restauração de 350 hectares</li>
+                                    <li>Liderança de equipes de campo</li>
+                                    <li>Avaliação de qualidade de plantios</li>
+                                </ul>
+                                <div class="experience-gallery">
+                                    <!-- PLACEHOLDER: Adicione imagens do projeto aqui -->
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </article>
 
-                <!-- Project 5: Egis / Rio Doce -->
-                <article class="project-card">
-                    <img src="assets/project_rio_doce.png" alt="Bacia do Rio Doce" class="project-img">
-                    <div class="project-info">
-                        <h3>Restauração Bacia Rio Doce</h3>
-                        <p><strong>Egis Brasil (2018-2021)</strong><br>Projetos de restauração florestal com
-                            supervisão de equipes e diagnósticos técnicos. Apoio a vistorias da Fundação Renova e
-                            levantamentos
-                            fitossociológicos.</p>
+                <!-- Experience 6: Rio Doce -->
+                <article class="flip-card" data-experience="riodoce">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="assets/project_rio_doce.png" alt="Bacia do Rio Doce" class="project-img">
+                            <div class="project-info">
+                                <h3>Restauração Bacia Rio Doce</h3>
+                                <p><strong>Egis Brasil (2018-2021)</strong><br>Projetos de restauração com supervisão e
+                                    diagnósticos técnicos.</p>
+                            </div>
+                            <span class="flip-hint">🔄 Clique para ver detalhes</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <button class="flip-back-btn" aria-label="Voltar">✕</button>
+                            <h3>Restauração Bacia Rio Doce</h3>
+                            <p class="experience-period">📅 2018 - 2021</p>
+                            <div class="experience-details">
+                                <!-- PLACEHOLDER: Substitua este texto pela descrição detalhada -->
+                                <p class="experience-description">
+                                    Projetos de restauração florestal na Bacia do Rio Doce com supervisão de equipes e
+                                    diagnósticos técnicos. Apoio a vistorias da Fundação Renova e levantamentos
+                                    fitossociológicos.
+                                </p>
+                                <h4>🎯 Principais Entregas</h4>
+                                <ul class="experience-achievements">
+                                    <!-- PLACEHOLDER: Substitua pelos itens reais -->
+                                    <li>Supervisão de equipes de restauração</li>
+                                    <li>Diagnósticos técnicos</li>
+                                    <li>Levantamentos fitossociológicos</li>
+                                </ul>
+                                <div class="experience-gallery">
+                                    <!-- PLACEHOLDER: Adicione imagens do projeto aqui -->
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </article>
+
             </div>
         </div>
     </section>
