@@ -433,16 +433,30 @@ header .container {
     background: linear-gradient(135deg, #9ab01e, var(--secondary-color));
 }
 
-/* Back of card */
+/* Back of card - NO OVERFLOW HERE (3D context only) */
 .flip-card-back {
     background: linear-gradient(165deg, var(--primary-color) 0%, var(--primary-dark) 100%);
     color: var(--text-light);
     transform: rotateY(180deg);
-    padding: var(--spacing-lg);
-    overflow-y: scroll;
-    overflow-x: hidden;
+    padding: 0;
+    overflow: hidden;
+    /* CRITICAL: hidden, not scroll */
     display: flex;
     flex-direction: column;
+    /* GPU acceleration */
+    will-change: transform;
+    -webkit-transform: rotateY(180deg) translateZ(0);
+    transform: rotateY(180deg) translateZ(0);
+}
+
+/* Inner content wrapper - SCROLL HAPPENS HERE (separate from 3D) */
+.flip-card-back-content {
+    flex: 1;
+    padding: var(--spacing-lg);
+    padding-top: calc(var(--spacing-lg) + 24px);
+    /* Space for close button */
+    overflow-y: auto;
+    overflow-x: hidden;
     overscroll-behavior: none;
     /* Prevent text selection */
     user-select: none;
@@ -450,28 +464,24 @@ header .container {
     /* Allow touch/mouse scroll */
     touch-action: pan-y;
     cursor: grab;
-    /* GPU acceleration to prevent flash */
-    will-change: transform;
-    -webkit-transform: rotateY(180deg) translateZ(0);
-    transform: rotateY(180deg) translateZ(0);
 }
 
-/* Hide scrollbar but keep functionality */
-.flip-card-back::-webkit-scrollbar {
+/* Scrollbar on content wrapper */
+.flip-card-back-content::-webkit-scrollbar {
     width: 6px;
 }
 
-.flip-card-back::-webkit-scrollbar-track {
+.flip-card-back-content::-webkit-scrollbar-track {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 3px;
 }
 
-.flip-card-back::-webkit-scrollbar-thumb {
+.flip-card-back-content::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.3);
     border-radius: 3px;
 }
 
-.flip-card-back::-webkit-scrollbar-thumb:hover {
+.flip-card-back-content::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.5);
 }
 

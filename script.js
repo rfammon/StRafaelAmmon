@@ -88,57 +88,57 @@ document.addEventListener('DOMContentLoaded', () => {
     // ============================================
     // DRAG TO SCROLL (mouse users)
     // ============================================
-    const cardBacks = document.querySelectorAll('.flip-card-back');
+    const cardBackContents = document.querySelectorAll('.flip-card-back-content');
 
-    cardBacks.forEach(cardBack => {
+    cardBackContents.forEach(content => {
         let isDown = false;
         let startY;
         let scrollTop;
 
-        cardBack.addEventListener('mousedown', (e) => {
+        content.addEventListener('mousedown', (e) => {
             if (e.target.closest('.flip-back-btn')) return;
             isDown = true;
-            cardBack.style.cursor = 'grabbing';
-            startY = e.pageY - cardBack.offsetTop;
-            scrollTop = cardBack.scrollTop;
+            content.style.cursor = 'grabbing';
+            startY = e.pageY - content.offsetTop;
+            scrollTop = content.scrollTop;
             e.preventDefault();
         });
 
-        cardBack.addEventListener('mouseleave', () => {
+        content.addEventListener('mouseleave', () => {
             isDown = false;
-            cardBack.style.cursor = 'grab';
+            content.style.cursor = 'grab';
         });
 
-        cardBack.addEventListener('mouseup', () => {
+        content.addEventListener('mouseup', () => {
             isDown = false;
-            cardBack.style.cursor = 'grab';
+            content.style.cursor = 'grab';
         });
 
-        cardBack.addEventListener('mousemove', (e) => {
+        content.addEventListener('mousemove', (e) => {
             if (!isDown) return;
             e.preventDefault();
-            const y = e.pageY - cardBack.offsetTop;
+            const y = e.pageY - content.offsetTop;
             const walk = (y - startY) * 1.5;
-            cardBack.scrollTop = scrollTop - walk;
+            content.scrollTop = scrollTop - walk;
         });
 
-        // Prevent wheel scroll from going beyond limits (fixes flash)
-        cardBack.addEventListener('wheel', (e) => {
-            const maxScroll = cardBack.scrollHeight - cardBack.clientHeight;
-            const currentScroll = cardBack.scrollTop;
+        // Prevent wheel scroll from going beyond limits
+        content.addEventListener('wheel', (e) => {
+            const maxScroll = content.scrollHeight - content.clientHeight;
+            const currentScroll = content.scrollTop;
             const delta = e.deltaY;
 
             // Block scroll if at top and trying to scroll up
             if (currentScroll <= 0 && delta < 0) {
                 e.preventDefault();
-                cardBack.scrollTop = 0;
+                content.scrollTop = 0;
                 return;
             }
 
             // Block scroll if at bottom and trying to scroll down
             if (currentScroll >= maxScroll && delta > 0) {
                 e.preventDefault();
-                cardBack.scrollTop = maxScroll;
+                content.scrollTop = maxScroll;
                 return;
             }
         }, { passive: false });
