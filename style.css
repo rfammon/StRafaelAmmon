@@ -376,6 +376,8 @@ header .container {
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-sm);
     overflow: hidden;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
 }
 
 /* Front of card */
@@ -444,6 +446,12 @@ header .container {
     scroll-behavior: smooth;
     overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
+    /* Prevent text selection, allow scroll only */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: default;
 }
 
 /* Hide scrollbar but keep functionality */
