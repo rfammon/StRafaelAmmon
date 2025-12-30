@@ -121,6 +121,27 @@ document.addEventListener('DOMContentLoaded', () => {
             const walk = (y - startY) * 1.5;
             cardBack.scrollTop = scrollTop - walk;
         });
+
+        // Prevent wheel scroll from going beyond limits (fixes flash)
+        cardBack.addEventListener('wheel', (e) => {
+            const maxScroll = cardBack.scrollHeight - cardBack.clientHeight;
+            const currentScroll = cardBack.scrollTop;
+            const delta = e.deltaY;
+
+            // Block scroll if at top and trying to scroll up
+            if (currentScroll <= 0 && delta < 0) {
+                e.preventDefault();
+                cardBack.scrollTop = 0;
+                return;
+            }
+
+            // Block scroll if at bottom and trying to scroll down
+            if (currentScroll >= maxScroll && delta > 0) {
+                e.preventDefault();
+                cardBack.scrollTop = maxScroll;
+                return;
+            }
+        }, { passive: false });
     });
 
     // Future: Mobile Menu Toggle Logic
