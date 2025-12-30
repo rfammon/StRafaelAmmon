@@ -85,5 +85,43 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // ============================================
+    // DRAG TO SCROLL (mouse users)
+    // ============================================
+    const cardBacks = document.querySelectorAll('.flip-card-back');
+
+    cardBacks.forEach(cardBack => {
+        let isDown = false;
+        let startY;
+        let scrollTop;
+
+        cardBack.addEventListener('mousedown', (e) => {
+            if (e.target.closest('.flip-back-btn')) return;
+            isDown = true;
+            cardBack.style.cursor = 'grabbing';
+            startY = e.pageY - cardBack.offsetTop;
+            scrollTop = cardBack.scrollTop;
+            e.preventDefault();
+        });
+
+        cardBack.addEventListener('mouseleave', () => {
+            isDown = false;
+            cardBack.style.cursor = 'grab';
+        });
+
+        cardBack.addEventListener('mouseup', () => {
+            isDown = false;
+            cardBack.style.cursor = 'grab';
+        });
+
+        cardBack.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const y = e.pageY - cardBack.offsetTop;
+            const walk = (y - startY) * 1.5;
+            cardBack.scrollTop = scrollTop - walk;
+        });
+    });
+
     // Future: Mobile Menu Toggle Logic
 });

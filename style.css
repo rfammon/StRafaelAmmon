@@ -439,19 +439,21 @@ header .container {
     color: var(--text-light);
     transform: rotateY(180deg);
     padding: var(--spacing-lg);
-    overflow-y: auto;
+    overflow-y: scroll;
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    scroll-behavior: smooth;
-    overscroll-behavior: contain;
-    -webkit-overflow-scrolling: touch;
-    /* Prevent text selection, allow scroll only */
+    overscroll-behavior: none;
+    /* Prevent text selection */
     user-select: none;
     -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    cursor: default;
+    /* Allow touch/mouse scroll */
+    touch-action: pan-y;
+    cursor: grab;
+    /* GPU acceleration to prevent flash */
+    will-change: transform;
+    -webkit-transform: rotateY(180deg) translateZ(0);
+    transform: rotateY(180deg) translateZ(0);
 }
 
 /* Hide scrollbar but keep functionality */
