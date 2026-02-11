@@ -144,5 +144,51 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: false });
     });
 
-    // Future: Mobile Menu Toggle Logic
+    // ============================================
+    // MOBILE MENU TOGGLE
+    // ============================================
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const header = document.querySelector('header');
+
+    if (navToggle) {
+        navToggle.addEventListener('click', () => {
+            header.classList.toggle('nav-active');
+
+            // Prevent scrolling when menu is open
+            if (header.classList.contains('nav-active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        });
+    }
+
+    // Close menu when a link is clicked
+    const navItems = document.querySelectorAll('.nav-links a');
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            header.classList.remove('nav-active');
+            document.body.style.overflow = '';
+        });
+    });
+
+    // ============================================
+    // APPS CAROUSEL LOGIC
+    // ============================================
+    const carousel = document.querySelector('.apps-carousel');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+
+    if (carousel && prevBtn && nextBtn) {
+        const scrollAmount = 410; // Card width (380) + gap (30)
+
+        nextBtn.addEventListener('click', () => {
+            carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+
+        prevBtn.addEventListener('click', () => {
+            carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+    }
 });

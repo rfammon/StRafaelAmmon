@@ -28,12 +28,16 @@
                 <img src="assets/logo_ra.png" alt="RA Engenharia Florestal" class="logo-img">
             </a>
             <nav>
+                <button class="nav-toggle" aria-label="Abrir menu">
+                    <span class="hamburger"></span>
+                </button>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">Sobre</a></li>
                     <li><a href="#projects">Projetos</a></li>
                     <li><a href="#paisagismo">Paisagismo</a></li>
                     <li><a href="#treinamentos">Treinamentos</a></li>
+                    <li><a href="#apps">Apps</a></li>
                     <li><a href="#contact">Contato</a></li>
                 </ul>
             </nav>
@@ -142,6 +146,9 @@
                                 <span class="cert-institution">QGIS e Power BI</span>
                             </div>
                         </div>
+                    </div>
+                    <div style="margin-top: 2rem;">
+                        <a href="Resume_Rafael_Ammon.html" target="_blank" class="btn">Visualizar Currículo Premium</a>
                     </div>
                 </div>
             </div>
@@ -641,6 +648,120 @@
 
             <div class="treinamentos-cta">
                 <a href="#contact" class="btn">Solicitar Treinamento In-Company</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apps Section -->
+    <section id="apps" class="apps">
+        <div class="container">
+            <h2>Aplicações Digitais</h2>
+            <p class="section-intro">Desenvolvimento de soluções tecnológicas personalizadas para otimização de fluxos
+                de trabalho na engenharia ambiental e florestal.</p>
+
+            <div class="apps-carousel-container">
+                <button class="carousel-btn prev" aria-label="Anterior">❮</button>
+                <div class="apps-carousel">
+                    <!-- ARAON -->
+                    <article class="flip-card app-flip-card card-araon" data-app="araon">
+                        <div class="flip-card-inner">
+                            <!-- FRENTE: Mockup Desktop -->
+                            <div class="flip-card-front app-front">
+                                <div class="app-screenshot-container">
+                                    <img src="assets/screenshots/araon_desktop.png" alt="ARAON Desktop Preview"
+                                        class="app-screenshot">
+                                </div>
+                                <div class="app-card-info">
+                                    <div class="app-brand">
+                                        <span class="app-icon-small">🌳</span>
+                                        <h3>ARAON</h3>
+                                    </div>
+                                    <p class="app-tagline">Avaliação de Risco Arbóreo Online</p>
+                                    <div class="app-tech">
+                                        <span class="tag">PWA</span>
+                                        <span class="tag">Offline</span>
+                                        <span class="tag">Engenharia Florestal</span>
+                                    </div>
+                                    <div class="flip-cta">
+                                        <span>Ver versão Mobile</span>
+                                        <i class="fas fa-mobile-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- VERSO: Mockup Mobile -->
+                            <div class="flip-card-back app-back">
+                                <button class="flip-back-btn" aria-label="Voltar">✕</button>
+                                <div class="app-phone-mockup">
+                                    <div class="phone-screen">
+                                        <img src="assets/screenshots/araon_mobile.png" alt="ARAON Mobile Preview">
+                                    </div>
+                                </div>
+                                <div class="app-back-content">
+                                    <h3>Dashboard Campo</h3>
+                                    <p>Coleta de dados offline e diagnósticos instantâneos com geolocalização e
+                                        relatórios PDF.</p>
+                                    <div class="app-links">
+                                        <a href="https://rfammon.github.io/ARAON/" target="_blank"
+                                            class="btn btn-primary-branded">Acessar App</a>
+                                        <a href="https://github.com/rfammon/ARAON" target="_blank"
+                                            class="btn btn-secondary-branded">GitHub</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Time Tracker -->
+                    <article class="flip-card app-flip-card card-timetracker" data-app="timetracker">
+                        <div class="flip-card-inner">
+                            <!-- FRENTE: Mockup Desktop -->
+                            <div class="flip-card-front app-front">
+                                <div class="app-screenshot-container">
+                                    <img src="assets/screenshots/timetracker_desktop.png"
+                                        alt="Time Tracker Desktop Preview" class="app-screenshot">
+                                </div>
+                                <div class="app-card-info">
+                                    <div class="app-brand">
+                                        <span class="app-icon-small">⏱️</span>
+                                        <h3>Time Tracker</h3>
+                                    </div>
+                                    <p class="app-tagline">Gestão de Tempo & Cronogramas</p>
+                                    <div class="app-tech">
+                                        <span class="tag">React</span>
+                                        <span class="tag">TypeScript</span>
+                                        <span class="tag">Cascading Shift</span>
+                                    </div>
+                                    <div class="flip-cta">
+                                        <span>Ver versão Mobile</span>
+                                        <i class="fas fa-mobile-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- VERSO: Mockup Mobile -->
+                            <div class="flip-card-back app-back">
+                                <button class="flip-back-btn" aria-label="Voltar">✕</button>
+                                <div class="app-phone-mockup">
+                                    <div class="phone-screen">
+                                        <img src="assets/screenshots/timetracker_mobile.png"
+                                            alt="Time Tracker Mobile Preview">
+                                    </div>
+                                </div>
+                                <div class="app-back-content">
+                                    <h3>Gestão Dinâmica</h3>
+                                    <p>Controle de tempos de treinamento com ajuste automático de cronogramas em tempo
+                                        real.</p>
+                                    <div class="app-links">
+                                        <a href="https://rfammon.github.io/time-tracker-web/" target="_blank"
+                                            class="btn btn-primary-branded">Acessar App</a>
+                                        <a href="https://github.com/rfammon/time-tracker-web" target="_blank"
+                                            class="btn btn-secondary-branded">GitHub</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <button class="carousel-btn next" aria-label="Próximo">❯</button>
             </div>
         </div>
     </section>
