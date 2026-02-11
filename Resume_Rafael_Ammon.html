@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo Rafael Ammon - Engenheiro Florestal & Gestor de Projetos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #09212C;
+            --accent: #ABC022;
+            --text: #333333;
+            --light-text: #666666;
+            --bg: #ffffff;
+            --section-bg: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            color: var(--text);
+            background-color: #f0f2f5;
+            padding: 40px 20px;
+        }
+
+        .resume-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--bg);
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            position: relative;
+        }
+
+        /* ATS Tip: Keep it simple but elegant */
+        header {
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            font-weight: 700;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: var(--light-text);
+        }
+
+        .contact-info a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .summary {
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+            color: var(--text);
+            border-left: 4px solid var(--accent);
+            padding-left: 20px;
+        }
+
+        section {
+            margin-bottom: 35px;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        .experience-item {
+            margin-bottom: 20px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .job-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--primary);
+        }
+
+        .company-date {
+            font-size: 0.9rem;
+            color: var(--light-text);
+            font-weight: 600;
+        }
+
+        ul {
+            list-style: none;
+            margin-top: 8px;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+        }
+
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .skill-category {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .education-item {
+            margin-bottom: 15px;
+        }
+
+        /* Print optimization */
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+
+            .resume-container {
+                box-shadow: none;
+                border-radius: 0;
+                width: 100%;
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .no-print {
+                display: none;
+            }
+        }
+
+        .btn-print {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--section-bg);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="javascript:window.print()" class="btn-print no-print">Imprimir / Salvar PDF</a>
+
+    <div class="resume-container">
+        <header>
+            <h1>Rafael Ammon</h1>
+            <div class="contact-info">
+                <span>📍 Praia Grande, SP</span>
+                <span>📱 (31) 99915-4408</span>
+                <span>✉️ <a href="mailto:rafael.ammon@gmail.com">rafael.ammon@gmail.com</a></span>
+                <span>🔗 <a href="https://linkedin.com/in/rafael-andrade-ammon-2527a72a/">LinkedIn</a></span>
+                <span>🌐 <a href="https://rfammon.github.io/StRafaelAmmon/">Meu Portfólio</a></span>
+            </div>
+        </header>
+
+        <div class="summary">
+            <strong>Engenheiro Florestal Sênior & Gestor de Projetos</strong> com mais de 12 anos de experiência na
+            liderança de projetos críticos de restauração ecológica, gestão ambiental industrial e geoprocessamento.
+            Especialista em aliar rigor científico à eficiência operacional em ambientes de alta complexidade
+            (Petrobras, Refinarias). Expert em normas ambientais e fiscalização de contratos.
+        </div>
+
+        <section>
+            <h2>Principais Competências</h2>
+            <div class="skills-grid">
+                <div>
+                    <span class="skill-category">Técnicas:</span>
+                    <div style="margin-top:5px;">
+                        <span class="tag">Geoprocessamento (QGIS)</span>
+                        <span class="tag">Restauração Ecológica</span>
+                        <span class="tag">Silvicultura Urbana</span>
+                        <span class="tag">Inventário Florestal</span>
+                        <span class="tag">Manejo Arbóreo</span>
+                        <span class="tag">APP / Reserva Legal</span>
+                    </div>
+                </div>
+                <div>
+                    <span class="skill-category">Gestão:</span>
+                    <div style="margin-top:5px;">
+                        <span class="tag">Project Management (MBA)</span>
+                        <span class="tag">Fiscalização de Contratos</span>
+                        <span class="tag">Análise de Risco Operacional</span>
+                        <span class="tag">Consultoria Técnica</span>
+                        <span class="tag">Liderança de Equipes</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Experiência Profissional</h2>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <span class="job-title">Consultor Técnico em Engenharia Florestal</span>
+                    <span class="company-date">Atual</span>
+                </div>
+                <ul>
+                    <li>Desenvolvimento de padrões operacionais e manuais técnicos para empresas dos setores de Óleo e
+                        Gás e florestal.</li>
+                    <li>Otimização de processos de conformidade ambiental, reduzindo lacunas operacionais através de
+                        literatura científica aplicada.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <span class="job-title">Coordenação de Supressão Vegetal - Parque Fotovoltaico REPLAN</span>
+                    <span class="company-date">2025</span>
+                </div>
+                <ul>
+                    <li>Liderança da supressão de espécies invasoras para implantação de um dos maiores projetos de
+                        energia solar em refinaria.</li>
+                    <li>Gestão logística de maquinário pesado e coordenação de equipes de campo, garantindo o
+                        cumprimento rigoroso do cronograma executivo.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <span class="job-title">Fiscal de Meio Ambiente (Áreas Verdes)</span>
+                    <span class="company-date">RPBC | 2023 – 2025</span>
+                </div>
+                <ul>
+                    <li>Supervisão técnica de contratos de grande escala na Refinaria Presidente Bernardes, garantindo
+                        100% de conformidade com padrões de segurança industrial.</li>
+                    <li>Realização de diagnósticos de risco arbóreo preventivo, mitigando incidentes operacionais e
+                        otimizando a arborização industrial.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <span class="job-title">Coordenação de Restauração Florestal (350 ha)</span>
+                    <span class="company-date">Elementus (GasLub) | 2021 – 2022</span>
+                </div>
+                <ul>
+                    <li>Gerenciamento integral de 350 hectares de restauração de Mata Atlântica nativa no Complexo
+                        GasLub (Itaboraí).</li>
+                    <li>Coordenação de plantio e monitoramento fitossociológico, atingindo altos índices de
+                        sobrevivência de mudas e regeneração natural.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <span class="job-title">Supervisor de Projetos de Restauração</span>
+                    <span class="company-date">Egis Brasil (Bacia Rio Doce) | 2018 – 2021</span>
+                </div>
+                <ul>
+                    <li>Supervisão técnica de projetos de recuperação na Bacia do Rio Doce em apoio à Fundação Renova.
+                    </li>
+                    <li>Execução de diagnósticos técnicos e monitoramento de indicadores ecológicos em áreas de
+                        preservação permanente.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <span class="job-title">Líder de Campo - Inventário Florestal Nacional (IFN)</span>
+                    <span class="company-date">Serviço Florestal Brasileiro | 2014 – 2015</span>
+                </div>
+                <ul>
+                    <li>Liderança de equipes em levantamentos dendrométricos e botânicos em fragmentos de Mata Atlântica
+                        no estado do RJ.</li>
+                    <li>Georreferenciamento de precisão e coleta de dados estratégicos para o mapeamento florestal
+                        nacional.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Formação Acadêmica</h2>
+            <div class="education-item">
+                <div class="exp-header">
+                    <span class="job-title">MBA em Gestão de Projetos</span>
+                    <span class="company-date">USP / ESALQ</span>
+                </div>
+            </div>
+            <div class="education-item">
+                <div class="exp-header">
+                    <span class="job-title">Graduação em Engenharia Florestal</span>
+                    <span class="company-date">UFRRJ (2007 - 2012)</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Certificações & Cursos</h2>
+            <div class="skills-grid" style="font-size:0.9rem;">
+                <div>
+                    <li>Google Project Management Professional</li>
+                    <li>Planejador Certificado (ABRAPLAN)</li>
+                    <li>Ferramentas de Controle (CREA-SP)</li>
+                </div>
+                <div>
+                    <li>Cursos de Especialização em Paisagismo (IBRAP)</li>
+                    <li>Especialista em Geoprocessamento (QGIS)</li>
+                    <li>Fiscalização de Contratos Ambientais (Petrobras)</li>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+
+</html>
