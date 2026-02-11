@@ -194,6 +194,27 @@
             margin-bottom: 5px;
             border: 1px solid #ddd;
         }
+
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .qr-code-container {
+            text-align: center;
+            font-size: 0.7rem;
+            color: var(--light-text);
+            max-width: 100px;
+        }
+
+        .qr-code-container img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 5px;
+            border: 1px solid #eee;
+            padding: 2px;
+        }
     </style>
 </head>
 
@@ -203,13 +224,21 @@
 
     <div class="resume-container">
         <header>
-            <h1>Rafael Ammon</h1>
-            <div class="contact-info">
-                <span>📍 Praia Grande, SP</span>
-                <span>📱 (31) 99915-4408</span>
-                <span>✉️ <a href="mailto:rafael.ammon@gmail.com">rafael.ammon@gmail.com</a></span>
-                <span>🔗 <a href="https://linkedin.com/in/rafael-andrade-ammon-2527a72a/">LinkedIn</a></span>
-                <span>🌐 <a href="https://rfammon.github.io/StRafaelAmmon/">Meu Portfólio</a></span>
+            <div class="header-flex">
+                <div>
+                    <h1>Rafael Ammon</h1>
+                    <div class="contact-info">
+                        <span>📍 Praia Grande, SP</span>
+                        <span>📱 (31) 99915-4408</span>
+                        <span>✉️ <a href="mailto:rafael.ammon@gmail.com">rafael.ammon@gmail.com</a></span>
+                        <span>🔗 <a href="https://linkedin.com/in/rafael-andrade-ammon-2527a72a/">LinkedIn</a></span>
+                        <span>🌐 <a href="https://rfammon.github.io/StRafaelAmmon/">Meu Portfólio</a></span>
+                    </div>
+                </div>
+                <div class="qr-code-container no-print">
+                    <img src="assets/qrcode_portfolio.png" alt="QR Code Portfólio">
+                    <p>Escanear Portfólio Completo</p>
+                </div>
             </div>
         </header>
 
