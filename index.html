@@ -7,19 +7,54 @@
     <title>Rafael Ammon - Engenheiro Florestal | Gestor de Projetos | Paisagista</title>
     <meta name="description"
         content="Portfólio de Rafael Ammon, Engenheiro Florestal, Gestor de Projetos e Paisagista, especializado em gestão ambiental, restauração florestal, geoprocessamento e paisagismo sustentável.">
+    <link rel="canonical" href="https://rfammon.github.io/StRafaelAmmon/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Rafael Ammon - Engenheiro Florestal | Gestor de Projetos | Paisagista">
+    <meta property="og:description"
+        content="Especialista em gestão ambiental, restauração florestal, geoprocessamento e paisagismo sustentável.">
+    <meta property="og:image" content="assets/hero.png">
+    <meta property="og:url" content="https://rfammon.github.io/StRafaelAmmon/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rafael Ammon - Engenheiro Florestal">
+    <meta name="twitter:description"
+        content="Especialista em gestão ambiental, restauração florestal, geoprocessamento e paisagismo sustentável.">
+    <meta name="twitter:image" content="assets/hero.png">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap">
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Roboto:wght@300;400;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"
         rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Scroll Progress Bar -->
+    <style>
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary-color), #c4d82a);
+            z-index: 1001;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
 
     <!-- Header -->
     <header>
@@ -37,6 +72,7 @@
                     <li><a href="#projects">Projetos</a></li>
                     <li><a href="#paisagismo">Paisagismo</a></li>
                     <li><a href="#treinamentos">Treinamentos</a></li>
+                    <li><a href="#curso" class="nav-highlight-link">Curso Udemy</a></li>
                     <li><a href="#apps">Apps</a></li>
                     <li><a href="#contact">Contato</a></li>
                 </ul>
@@ -73,7 +109,7 @@
         <div class="container">
             <h2>Sobre Mim</h2>
             <div class="about-content">
-                <img src="assets/profile_real.png" alt="Foto de Rafael Ammon" class="about-img">
+                <img src="assets/profile_real.png" alt="Foto de Rafael Ammon" class="about-img" loading="lazy" decoding="async">
                 <div class="about-text">
                     <p>Engenheiro Florestal Sênior com sólida formação acadêmica e vasta experiência prática em gestão
                         ambiental, projetos de restauração florestal e operações em áreas verdes.</p>
@@ -167,7 +203,7 @@
                     <div class="flip-card-inner">
                         <!-- FRENTE DO CARD -->
                         <div class="flip-card-front">
-                            <img src="assets/project_consulting.png" alt="Consultoria Florestal" class="project-img">
+                            <img src="assets/project_consulting.png" alt="Consultoria Florestal" class="project-img" loading="lazy" decoding="async">
                             <div class="project-info">
                                 <h3>Consultoria Técnica em Engenharia Florestal</h3>
                                 <p><strong>Atual</strong><br>Desenvolvimento de padrões técnicos e boas práticas para
@@ -195,7 +231,7 @@
                                         <li>Treinamento de equipes de campo</li>
                                     </ul>
                                     <div class="experience-gallery">
-                                        <img src="assets/detail_consultoria_1.png" alt="Consultoria">
+                                        <img src="assets/detail_consultoria_1.png" alt="Consultoria" loading="lazy" decoding="async">
                                     </div>
                                 </div>
                             </div>
@@ -207,7 +243,7 @@
                 <article class="flip-card" data-experience="replan">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="assets/project_replan_solar.png" alt="Projeto REPLAN" class="project-img">
+                            <img src="assets/project_replan_solar.png" alt="Projeto REPLAN" class="project-img" loading="lazy" decoding="async">
                             <div class="project-info">
                                 <h3>Parque Fotovoltaico REPLAN</h3>
                                 <p><strong>Refinaria do Planalto (2º sem. 2025)</strong><br>Coordenação de supressão
@@ -234,7 +270,7 @@
                                         <li>Controle de qualidade ambiental</li>
                                     </ul>
                                     <div class="experience-gallery">
-                                        <img src="assets/detail_replan_1.jpg" alt="Equipe REPLAN">
+                                        <img src="assets/detail_replan_1.jpg" alt="Equipe REPLAN" loading="lazy" decoding="async">
                                     </div>
                                 </div>
                             </div>
@@ -246,7 +282,7 @@
                 <article class="flip-card" data-experience="rpbc">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="assets/project_rpbc.png" alt="Refinaria Presidente Bernardes" class="project-img">
+                            <img src="assets/project_rpbc.png" alt="Refinaria Presidente Bernardes" class="project-img" loading="lazy" decoding="async">
                             <div class="project-info">
                                 <h3>Gestão Ambiental Industrial</h3>
                                 <p><strong>RPBC (2023-2025)</strong><br>Fiscal de Meio Ambiente com foco em áreas verdes
@@ -272,7 +308,7 @@
                                         <li>Melhorias em conformidade ambiental</li>
                                     </ul>
                                     <div class="experience-gallery">
-                                        <img src="assets/detail_rpbc_1.jpg" alt="Equipe RPBC">
+                                        <img src="assets/detail_rpbc_1.jpg" alt="Equipe RPBC" loading="lazy" decoding="async">
                                     </div>
                                 </div>
                             </div>
@@ -284,7 +320,7 @@
                 <article class="flip-card" data-experience="revap">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="assets/project_revap.png" alt="Refinaria do Vale do Paraíba" class="project-img">
+                            <img src="assets/project_revap.png" alt="Refinaria do Vale do Paraíba" class="project-img" loading="lazy" decoding="async">
                             <div class="project-info">
                                 <h3>Manutenção de Áreas Verdes - REVAP</h3>
                                 <p><strong>REVAP (2022-2023)</strong><br>Supervisão de contratos de manutenção de áreas
@@ -320,7 +356,7 @@
                 <article class="flip-card" data-experience="gaslub">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="assets/project_gaslub.png" alt="Projeto GasLub" class="project-img">
+                            <img src="assets/project_gaslub.png" alt="Projeto GasLub" class="project-img" loading="lazy" decoding="async">
                             <div class="project-info">
                                 <h3>Restauração Florestal GasLub</h3>
                                 <p><strong>Elementus (2021-2022)</strong><br>Coordenação de 350 hectares de restauração
@@ -346,7 +382,7 @@
                                         <li>Avaliação de qualidade de plantios</li>
                                     </ul>
                                     <div class="experience-gallery">
-                                        <img src="assets/detail_gaslub_1.jpg" alt="Restauração GasLub">
+                                        <img src="assets/detail_gaslub_1.jpg" alt="Restauração GasLub" loading="lazy" decoding="async">
                                     </div>
                                 </div>
                             </div>
@@ -358,7 +394,7 @@
                 <article class="flip-card" data-experience="riodoce">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="assets/project_rio_doce.png" alt="Bacia do Rio Doce" class="project-img">
+                            <img src="assets/project_rio_doce.png" alt="Bacia do Rio Doce" class="project-img" loading="lazy" decoding="async">
                             <div class="project-info">
                                 <h3>Restauração Bacia Rio Doce</h3>
                                 <p><strong>Egis Brasil (2018-2021)</strong><br>Projetos de restauração com supervisão e
@@ -394,7 +430,7 @@
                 <article class="flip-card" data-experience="comperj">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="assets/project_comperj.png" alt="Restauração COMPERJ" class="project-img">
+                            <img src="assets/project_comperj.png" alt="Restauração COMPERJ" class="project-img" loading="lazy" decoding="async">
                             <div class="project-info">
                                 <h3>Restauração Florestal COMPERJ</h3>
                                 <p><strong>Elementus (2017-2018)</strong><br>Restauração ecológica no Complexo
@@ -431,7 +467,7 @@
                 <article class="flip-card" data-experience="carapebus">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="assets/project_carapebus.png" alt="Lagoa de Carapebus" class="project-img">
+                            <img src="assets/project_carapebus.png" alt="Lagoa de Carapebus" class="project-img" loading="lazy" decoding="async">
                             <div class="project-info">
                                 <h3>Restauração Lagoa Carapebus</h3>
                                 <p><strong>CTA Meio Ambiente (2015-2017)</strong><br>Conformidade ambiental
@@ -468,7 +504,7 @@
                 <article class="flip-card" data-experience="ifn">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="assets/project_ifn.png" alt="Inventário Florestal Nacional" class="project-img">
+                            <img src="assets/project_ifn.png" alt="Inventário Florestal Nacional" class="project-img" loading="lazy" decoding="async">
                             <div class="project-info">
                                 <h3>Inventário Florestal Nacional</h3>
                                 <p><strong>SFB (2014-2015)</strong><br>Levantamento de dados florestais no Rio de
@@ -517,31 +553,31 @@
             <div class="geo-grid">
                 <!-- Service 1: Mapas de Calor -->
                 <div class="geo-card">
-                    <img src="assets/icon_geo_mapa.png" alt="Mapas de Calor" class="geo-icon-img">
+                    <img src="assets/icon_geo_mapa.png" alt="Mapas de Calor" class="geo-icon-img" loading="lazy" decoding="async">
                     <h3>Mapas de Calor & Análise Espacial</h3>
                     <p>Elaboração de mapas de densidade (Kernel) e análises espaciais complexas para identificação de
                         padrões e tomada de decisão estratégica.</p>
                     <img src="assets/map_satellite_hybrid.png" alt="Mapa Híbrido Satélite + CAD"
-                        class="geo-img-preview">
+                        class="geo-img-preview" loading="lazy" decoding="async">
                 </div>
 
                 <!-- Service 2: Projetos de Reflorestamento -->
                 <div class="geo-card">
-                    <img src="assets/icon_geo_reflorestamento.png" alt="Reflorestamento" class="geo-icon-img">
+                    <img src="assets/icon_geo_reflorestamento.png" alt="Reflorestamento" class="geo-icon-img" loading="lazy" decoding="async">
                     <h3>Projetos Executivos de Reflorestamento</h3>
                     <p>Planejamento detalhado de plantio, divisão de talhões e locação de mudas com precisão técnica
                         para execução em campo.</p>
                     <img src="assets/map_reforestation.png" alt="Plano Executivo de Reflorestamento CAD"
-                        class="geo-img-preview">
+                        class="geo-img-preview" loading="lazy" decoding="async">
                 </div>
 
                 <!-- Service 3: APP & Gestão -->
                 <div class="geo-card">
-                    <img src="assets/icon_geo_app.png" alt="Áreas de Preservação" class="geo-icon-img">
+                    <img src="assets/icon_geo_app.png" alt="Áreas de Preservação" class="geo-icon-img" loading="lazy" decoding="async">
                     <h3>Áreas de Preservação (APP)</h3>
                     <p>Delimitação de APPs, Reserva Legal e apoio à gestão territorial conforme o Código Florestal
                         Brasileiro.</p>
-                    <img src="assets/map_app.png" alt="Mapa de APP e Restrições Ambientais" class="geo-img-preview">
+                    <img src="assets/map_app.png" alt="Mapa de APP e Restrições Ambientais" class="geo-img-preview" loading="lazy" decoding="async">
                 </div>
             </div>
 
@@ -562,7 +598,7 @@
                 <!-- Service 1: Corporate -->
                 <div class="paisagismo-card">
                     <img src="assets/paisagismo_corporativo.png" alt="Design de Áreas Corporativas"
-                        class="service-illustration">
+                        class="service-illustration" loading="lazy" decoding="async">
                     <h3>Design de Áreas Corporativas</h3>
                     <p>Criação de ambientes verdes corporativos que promovem bem-estar, produtividade e imagem
                         institucional positiva.</p>
@@ -571,7 +607,7 @@
                 <!-- Service 2: Condos -->
                 <div class="paisagismo-card">
                     <img src="assets/paisagismo_condominios.png" alt="Paisagismo de Condomínios"
-                        class="service-illustration">
+                        class="service-illustration" loading="lazy" decoding="async">
                     <h3>Paisagismo de Condomínios</h3>
                     <p>Projetos completos para áreas comuns, valorizando o imóvel e criando espaços de convivência
                         harmoniosos.</p>
@@ -579,7 +615,7 @@
 
                 <!-- Service 3: Industrial -->
                 <div class="paisagismo-card">
-                    <img src="assets/paisagismo_industrial.png" alt="Áreas Industriais" class="service-illustration">
+                    <img src="assets/paisagismo_industrial.png" alt="Áreas Industriais" class="service-illustration" loading="lazy" decoding="async">
                     <h3>Áreas Industriais</h3>
                     <p>Soluções paisagísticas para plantas industriais, integrando vegetação, segurança e conformidade
                         ambiental.</p>
@@ -588,7 +624,7 @@
                 <!-- Service 4: Maintenance -->
                 <div class="paisagismo-card">
                     <img src="assets/paisagismo_manutencao.png" alt="Manutenção e Implantação"
-                        class="service-illustration">
+                        class="service-illustration" loading="lazy" decoding="async">
                     <h3>Manutenção e Implantação</h3>
                     <p>Serviços completos de implantação de jardins com planejamento técnico e manutenção periódica
                         especializada.</p>
@@ -608,11 +644,38 @@
             <p class="section-intro">Cursos técnicos especializados para profissionais que atuam com gestão e manutenção
                 de áreas verdes, com foco em segurança, qualidade e boas práticas.</p>
 
+            <!-- Curso Udemy em Destaque -->
+            <div id="curso" class="udemy-highlight scroll-animate">
+                <div class="udemy-card">
+                    <div class="udemy-badge">
+                        <span class="udemy-badge-icon">🎓</span>
+                        Curso Online — Udemy
+                    </div>
+                    <div class="udemy-content">
+                        <h3>Fundamentos de Geoprocessamento com QGIS</h3>
+                        <p>Domine o QGIS do zero ao avançado: mapas técnicos, análises espaciais e geoprocessamento
+                            aplicado à engenharia florestal e ambiental. Aprenda na prática com dados reais de campo.</p>
+                        <ul class="udemy-features">
+                            <li>Conteúdo prático e direto ao ponto</li>
+                            <li>Exercícios com dados reais de campo</li>
+                            <li>Cupom exclusivo para visitantes do portfólio</li>
+                        </ul>
+                    </div>
+                    <div class="udemy-cta">
+                        <span class="udemy-price">Acesso imediato</span>
+                        <a href="https://www.udemy.com/course/fundamentos-de-geoprocessamento-com-qgis/?couponCode=9B2BB3C61590E58D196D"
+                            target="_blank" rel="noopener noreferrer" class="btn btn-udemy">
+                            Acessar com Cupom de Desconto
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <div class="treinamentos-grid">
                 <!-- Training 1: Pruning -->
                 <div class="treinamento-card">
                     <img src="assets/treinamento_poda.png" alt="Poda e Supressão de Árvores"
-                        class="service-illustration">
+                        class="service-illustration" loading="lazy" decoding="async">
                     <h3>Poda e Supressão de Árvores</h3>
                     <p>Técnicas corretas de poda, identificação de pontos de corte, segurança em altura e legislação
                         aplicável à supressão arbórea.</p>
@@ -621,7 +684,7 @@
                 <!-- Training 2: Arboreal Management -->
                 <div class="treinamento-card">
                     <img src="assets/treinamento_manejo.png" alt="Avaliação de Manejo Arbóreo"
-                        class="service-illustration">
+                        class="service-illustration" loading="lazy" decoding="async">
                     <h3>Avaliação de Manejo Arbóreo</h3>
                     <p>Métodos de diagnóstico fitossanitário, avaliação de riscos, tomada de decisão e planejamento de
                         intervenções em arborização urbana.</p>
@@ -630,7 +693,7 @@
                 <!-- Training 3: Green Space Management -->
                 <div class="treinamento-card">
                     <img src="assets/treinamento_gestao.png" alt="Gestão de Espaços Verdes"
-                        class="service-illustration">
+                        class="service-illustration" loading="lazy" decoding="async">
                     <h3>Gestão de Espaços Verdes</h3>
                     <p>Planejamento estratégico, orçamento, cronogramas de manutenção e controle de qualidade em áreas
                         verdes corporativas e públicas.</p>
@@ -639,7 +702,7 @@
                 <!-- Training 4: Safety -->
                 <div class="treinamento-card">
                     <img src="assets/treinamento_seguranca.png" alt="Segurança em Operações"
-                        class="service-illustration">
+                        class="service-illustration" loading="lazy" decoding="async">
                     <h3>Segurança em Operações</h3>
                     <p>NR's aplicáveis, uso de EPIs e EPCs, procedimentos seguros, análise de risco e prevenção de
                         acidentes em áreas verdes.</p>
@@ -669,7 +732,7 @@
                             <div class="flip-card-front app-front">
                                 <div class="app-screenshot-container">
                                     <img src="assets/screenshots/araon_desktop.png" alt="ARAON Desktop Preview"
-                                        class="app-screenshot">
+                                        class="app-screenshot" loading="lazy" decoding="async">
                                 </div>
                                 <div class="app-card-info">
                                     <div class="app-brand">
@@ -693,7 +756,7 @@
                                 <button class="flip-back-btn" aria-label="Voltar">✕</button>
                                 <div class="app-phone-mockup">
                                     <div class="phone-screen">
-                                        <img src="assets/screenshots/araon_mobile.png" alt="ARAON Mobile Preview">
+                                        <img src="assets/screenshots/araon_mobile.png" alt="ARAON Mobile Preview" loading="lazy" decoding="async">
                                     </div>
                                 </div>
                                 <div class="app-back-content">
@@ -718,7 +781,7 @@
                             <div class="flip-card-front app-front">
                                 <div class="app-screenshot-container">
                                     <img src="assets/screenshots/timetracker_desktop.png"
-                                        alt="Time Tracker Desktop Preview" class="app-screenshot">
+                                        alt="Time Tracker Desktop Preview" class="app-screenshot" loading="lazy" decoding="async">
                                 </div>
                                 <div class="app-card-info">
                                     <div class="app-brand">
@@ -743,7 +806,7 @@
                                 <div class="app-phone-mockup">
                                     <div class="phone-screen">
                                         <img src="assets/screenshots/timetracker_mobile.png"
-                                            alt="Time Tracker Mobile Preview">
+                                            alt="Time Tracker Mobile Preview" loading="lazy" decoding="async">
                                     </div>
                                 </div>
                                 <div class="app-back-content">
@@ -794,7 +857,7 @@
     <!-- Footer -->
     <footer>
         <div class="container footer-content">
-            <img src="assets/logo_ra.png" alt="RA Engenharia Florestal" class="footer-logo">
+            <img src="assets/logo_ra.png" alt="RA Engenharia Florestal" class="footer-logo" loading="lazy" decoding="async">
             <p>&copy; 2025 Rafael Ammon - Engenharia Florestal. Todos os direitos reservados.</p>
         </div>
     </footer>

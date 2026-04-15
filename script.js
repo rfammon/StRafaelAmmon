@@ -3,6 +3,81 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Rafael Ammon Portfolio Loaded');
 
+    // ============================================
+    // SCROLL PROGRESS BAR
+    // ============================================
+    const scrollProgress = document.getElementById('scrollProgress');
+
+    function updateScrollProgress() {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        scrollProgress.style.width = progress + '%';
+    }
+
+    window.addEventListener('scroll', updateScrollProgress, { passive: true });
+
+    // ============================================
+    // SCROLL REVEAL ANIMATIONS
+    // ============================================
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Auto-detect animatable elements
+    const animatables = document.querySelectorAll(
+        '.geo-card, .paisagismo-card, .treinamento-card, .cert-card, .flip-card:not(.app-flip-card), .scroll-animate'
+    );
+    animatables.forEach((el, i) => {
+        el.classList.add('scroll-animate');
+        // Stagger delay for grid items
+        const parent = el.parentElement;
+        const siblings = parent ? Array.from(parent.querySelectorAll('.scroll-animate')) : [];
+        const idx = siblings.indexOf(el);
+        if (idx > 0) {
+            el.style.transitionDelay = (idx * 0.1) + 's';
+        }
+        revealObserver.observe(el);
+    });
+
+    // ============================================
+    // SCROLL SPY — Active nav link
+    // ============================================
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    function updateActiveNav() {
+        const scrollPos = window.scrollY + 150;
+
+        sections.forEach(section => {
+            const top = section.offsetTop;
+            const height = section.offsetHeight;
+            const id = section.getAttribute('id');
+
+            if (scrollPos >= top && scrollPos < top + height) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active-link');
+                    if (link.getAttribute('href') === '#' + id) {
+                        link.classList.add('active-link');
+                    }
+                });
+            }
+        });
+    }
+
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+    updateActiveNav();
+
     // Hero Video Carousel with Crossfade
     const videoElements = document.querySelectorAll('.hero-video');
     let currentVideoIndex = 0;
