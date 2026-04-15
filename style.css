@@ -363,28 +363,30 @@ header .container {
 }
 
 /* ============================================
-   CERTIFICATIONS GRID - Modern Badge Layout
+   CERTIFICATIONS — Premium Technical Badge
    ============================================ */
 
 .certifications-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 10px;
     margin-top: var(--spacing-md);
 }
 
 .cert-card {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 12px 16px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 249, 250, 0.95) 100%);
-    border-radius: 12px;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    transition: all 0.3s ease;
+    gap: 14px;
+    padding: 14px 18px;
+    background: var(--primary-color);
+    border-radius: var(--border-radius);
     position: relative;
     overflow: hidden;
+    transition: all 0.3s ease;
+    min-width: 220px;
+    flex: 1 1 240px;
+    max-width: 340px;
+    box-shadow: 0 2px 8px rgba(9, 33, 44, 0.15);
 }
 
 .cert-card::before {
@@ -392,96 +394,149 @@ header .container {
     position: absolute;
     top: 0;
     left: 0;
-    width: 4px;
+    width: 100%;
     height: 100%;
-    background: var(--secondary-color);
-    transition: width 0.3s ease;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(171, 192, 34, 0.03) 2px,
+        rgba(171, 192, 34, 0.03) 4px
+    );
+    pointer-events: none;
 }
 
 .cert-card:hover {
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(9, 33, 44, 0.25);
 }
 
-.cert-card:hover::before {
-    width: 6px;
+/* Colored accent bar */
+.cert-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+.cert-card:hover::after {
+    width: 4px;
+}
+
+.cert-academic::after {
+    background: var(--secondary-color);
+}
+
+.cert-professional::after {
+    background: #00d2ff;
+}
+
+.cert-technical::after {
+    background: #c084fc;
+}
+
+/* Type tag */
+.cert-type-tag {
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 2px 6px;
+    border-radius: 2px;
+    opacity: 0.5;
+}
+
+.cert-academic .cert-type-tag {
+    color: var(--secondary-color);
+    background: rgba(171, 192, 34, 0.1);
+}
+
+.cert-professional .cert-type-tag {
+    color: #00d2ff;
+    background: rgba(0, 210, 255, 0.1);
+}
+
+.cert-technical .cert-type-tag {
+    color: #c084fc;
+    background: rgba(192, 132, 252, 0.1);
 }
 
 .cert-icon {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     flex-shrink: 0;
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(171, 192, 34, 0.15);
-    border-radius: 10px;
-}
-
-.cert-content {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
-.cert-title {
-    font-weight: 600;
-    font-size: 0.95rem;
-    color: var(--primary-color);
-    line-height: 1.3;
-}
-
-.cert-institution {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    font-weight: 500;
-}
-
-/* Card Type Variations */
-.cert-academic::before {
-    background: linear-gradient(180deg, #ABC022 0%, #8aa01b 100%);
+    border-radius: 4px;
+    position: relative;
+    z-index: 1;
 }
 
 .cert-academic .cert-icon {
     background: rgba(171, 192, 34, 0.15);
 }
 
-.cert-professional::before {
-    background: linear-gradient(180deg, #09212C 0%, #05161D 100%);
-}
-
 .cert-professional .cert-icon {
-    background: rgba(9, 33, 44, 0.1);
-}
-
-.cert-technical::before {
-    background: linear-gradient(180deg, #4A90A4 0%, #367588 100%);
+    background: rgba(0, 210, 255, 0.12);
 }
 
 .cert-technical .cert-icon {
-    background: rgba(74, 144, 164, 0.12);
+    background: rgba(192, 132, 252, 0.12);
+}
+
+.cert-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    position: relative;
+    z-index: 1;
+}
+
+.cert-title {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+}
+
+.cert-institution {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.45);
+    font-weight: 500;
+    font-family: 'Roboto Mono', 'Consolas', monospace;
+    letter-spacing: 0.02em;
 }
 
 /* Responsive for Certifications */
 @media (max-width: 768px) {
     .certifications-grid {
-        gap: 10px;
+        gap: 8px;
     }
 
     .cert-card {
         flex: 1 1 100%;
-        padding: 10px 14px;
+        padding: 12px 14px;
+        min-width: auto;
+        max-width: 100%;
     }
 
     .cert-icon {
-        font-size: 1.3rem;
-        width: 36px;
-        height: 36px;
+        font-size: 1.1rem;
+        width: 32px;
+        height: 32px;
     }
 
     .cert-title {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 }
 
@@ -1406,16 +1461,50 @@ footer {
    SCROLL REVEAL ANIMATIONS
    ============================================ */
 
-.scroll-animate {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+/* Simple CSS-only fade-in-up animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.scroll-animate.visible {
-    opacity: 1;
-    transform: translateY(0);
+.scroll-animate {
+    animation: fadeInUp 0.6s ease both;
 }
+
+/* Stagger for children inside grids */
+.geo-grid > .geo-card,
+.paisagismo-grid > .paisagismo-card,
+.treinamentos-grid > .treinamento-card,
+.certifications-grid > .cert-card {
+    animation: fadeInUp 0.5s ease both;
+}
+.geo-grid > .geo-card:nth-child(1) { animation-delay: 0.1s; }
+.geo-grid > .geo-card:nth-child(2) { animation-delay: 0.2s; }
+.geo-grid > .geo-card:nth-child(3) { animation-delay: 0.3s; }
+
+.paisagismo-grid > .paisagismo-card:nth-child(1) { animation-delay: 0.1s; }
+.paisagismo-grid > .paisagismo-card:nth-child(2) { animation-delay: 0.15s; }
+.paisagismo-grid > .paisagismo-card:nth-child(3) { animation-delay: 0.2s; }
+.paisagismo-grid > .paisagismo-card:nth-child(4) { animation-delay: 0.25s; }
+
+.treinamentos-grid > .treinamento-card:nth-child(1) { animation-delay: 0.1s; }
+.treinamentos-grid > .treinamento-card:nth-child(2) { animation-delay: 0.2s; }
+.treinamentos-grid > .treinamento-card:nth-child(3) { animation-delay: 0.3s; }
+.treinamentos-grid > .treinamento-card:nth-child(4) { animation-delay: 0.4s; }
+
+.certifications-grid > .cert-card:nth-child(1) { animation-delay: 0.05s; }
+.certifications-grid > .cert-card:nth-child(2) { animation-delay: 0.1s; }
+.certifications-grid > .cert-card:nth-child(3) { animation-delay: 0.15s; }
+.certifications-grid > .cert-card:nth-child(4) { animation-delay: 0.2s; }
+.certifications-grid > .cert-card:nth-child(5) { animation-delay: 0.25s; }
+.certifications-grid > .cert-card:nth-child(6) { animation-delay: 0.3s; }
+.certifications-grid > .cert-card:nth-child(7) { animation-delay: 0.35s; }
 
 /* ============================================
    NAVBAR ACTIVE LINK (Scroll Spy)
