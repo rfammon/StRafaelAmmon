@@ -17,38 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', updateScrollProgress, { passive: true });
 
-    // ============================================
-    // SCROLL REVEAL ANIMATIONS
-    // ============================================
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                revealObserver.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    // Auto-detect animatable elements
-    const animatables = document.querySelectorAll(
-        '.geo-card, .paisagismo-card, .treinamento-card, .cert-card, .flip-card:not(.app-flip-card), .scroll-animate'
-    );
-    animatables.forEach((el, i) => {
-        el.classList.add('scroll-animate');
-        // Stagger delay for grid items
-        const parent = el.parentElement;
-        const siblings = parent ? Array.from(parent.querySelectorAll('.scroll-animate')) : [];
-        const idx = siblings.indexOf(el);
-        if (idx > 0) {
-            el.style.transitionDelay = (idx * 0.1) + 's';
-        }
-        revealObserver.observe(el);
-    });
 
     // ============================================
     // SCROLL SPY — Active nav link
@@ -223,14 +191,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // MOBILE MENU TOGGLE
     // ============================================
     const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
+    const navMenu = document.querySelector('.nav-links');
     const header = document.querySelector('header');
 
     if (navToggle) {
         navToggle.addEventListener('click', () => {
             header.classList.toggle('nav-active');
 
-            // Prevent scrolling when menu is open
             if (header.classList.contains('nav-active')) {
                 document.body.style.overflow = 'hidden';
             } else {
