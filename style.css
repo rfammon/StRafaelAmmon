@@ -428,7 +428,6 @@ header .container {
 }
 
 .cert-icon {
-    font-size: 1.3rem;
     flex-shrink: 0;
     width: 38px;
     height: 38px;
@@ -438,6 +437,23 @@ header .container {
     border-radius: 6px;
     margin-top: 2px;
     background: #f3f4f6;
+}
+
+.cert-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.cert-academic .cert-icon svg {
+    color: #7a8a1a;
+}
+
+.cert-professional .cert-icon svg {
+    color: var(--primary-color);
+}
+
+.cert-technical .cert-icon svg {
+    color: #4b5563;
 }
 
 .cert-content {
